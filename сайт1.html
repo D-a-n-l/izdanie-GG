@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Сайт</title>
+  <script src="https://www.google.com/jsapi"></script>
+  <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+   	var data = google.visualization.arrayToDataTable([
+   	 ['Заработок','Деньги'],
+     ['2016-2017',350000000],
+   	 ['2017-2018',400000000],
+   	 ['2018-2019',450000000],
+   	]);
+    var options = {
+     title: 'Заработано за 3 года',
+     is3D: true,
+     
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('ai'));
+     chart.draw(data, options);
+   }
+  </script>
+	<style>
+	 p {
+	 	text-indent: 20px;
+	 	font-family: Georgia, 'Times New Roman', Times, serif;
+	</style>
+	<style>
+		html { height: 100%; }
+		body {
+	margin: 0%;
+	height: 100%;
+	background: url(фон2.jpg);
+	background-size: cover;
+	background-repeat: round;
+	}
+	.sidebar {
+	width: 100px;
+	float: right; 
+	}
+	.content {
+	margin-right: 135px; 
+	}
+	
+	</style>
+	<style>
+	.fi {
+    	text-align: left; 
+   	}
+	</style>
+	<style>
+	header {
+		display: flex; 
+ 		height: 200px;
+ 		width: 100%; 
+ 		justify-content: center;
+ 		align-items: flex-end;
+ 		background: url(шапка.jpg) no-repeat center bottom;
+		}
+		.header-bg {
+   	 	height: 605px;
+    	text-align: center;
+  		}
+   		.header-bg img {
+    	position: relative;
+    	top: 10px;
+   		}
+   		li {
+			display: inline;
+			margin-right: 20px;
+			color: #fff;
+			font-family: Georgia, 'Times New Roman', Times, serif;
+		}
+		.header-center ul li a {
+    		text-decoration: none;
+    		color: #fff;
+    		cursor: pointer;
+    		font-weight: bold;
+		}	
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript">
+ $(document).ready(function(){
+    $("#menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+});
+</script>
+ </head>
+<body>
+	<header>
+		<div class="header-left"></div>
+		<div class="header-center">
+		<nav id="menu">
+		<ul>
+			<div class="header-center">
+			<li><a href="#a1">История создания</a></li>
+			<li><a href="#a2">Штат разработчиков</a></li>
+			<li><a href="#a3">Лучший работник</a></li>
+			<li><a href="#a4">Условия работы</a></li>
+			<li><a href="#a5">Маркетинг</a></li>
+		</ul>
+		</nav>
+	</header>
+	<div id="content">
+	<section id="a1">
+		<b><p align="center">История создания</p></b>
+		<p>Когда нам было 16 лет у нас появилась мысль создать свою игровую компанию.</p>
+	</section>
+	<section id="a2">
+		<b><p align="center">Штат разработчиков</p></b>
+		<p>Рафиков А.А.- разработчик игр</p>
+		<p>Иванов Н.С. - сценарист</p>
+		<p>Говоруха А.Е. - гейм-дизайнер</p>
+		<p>Гордеев В. - звукорежиссёр</p>
+	</section>
+	<section id="a3">
+		<b><p align="center">Лучший работник</p></b>
+		<p class="fig">
+	</section>
+	<section id="a4">
+		<b><p align="center">Условия работы</p></b>
+		<p>В нашем офисе в Москве присутствует спортзал и душевая, столики для пинг-понга, настольный футбол, зона отдыха с игровыми приставками и библиотека игр.</p>
+		<p> Условия для сотрудников – стандартные для отрасли: медстраховка, страховка жизни, оплачиваемые овертаймы и т.д. Есть велопарк: велосипеды можно брать напрокат, правда, зимой он закрыт.</p>
+	</section>
+	<section id="a5">
+		<b><p align="center">Маркетинг</p></b>
+		<div id="ai" style="width: 500px; height: 400px; margin: auto; border: 2px solid #ff0000;"></div>
+	</section>
+</body>
+</html>
